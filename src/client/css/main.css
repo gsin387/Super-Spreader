@@ -1,0 +1,275 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background-color: black;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  width: 100%;
+}
+
+button {
+  font-size: 18px;
+  outline: none;
+  border: 10px;
+  border-color: rgb(28, 28, 29);
+  color: rgb(2, 253, 107);
+  background-color:rgb(28, 28, 29);
+  padding: 5px 20px;
+  border-radius: 3px;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 10px rgb(2, 253, 107);
+}
+
+button:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none !important;
+}
+
+#game-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+#play-menu {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 20px 30px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#lobby-screen {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 20px 30px;
+  background-color: rgb(0, 0, 0);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;
+}
+
+#lobby-screen p {
+  color: rgb(2, 253, 107);
+  margin-bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+}
+
+#play-menu:hover {
+  box-shadow: 0 0 20px rgb(2, 253, 107);
+}
+
+#play-menu p {
+  color: rgb(2, 253, 107);
+  margin-bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+}
+
+#disconnect-text {
+  color: rgb(2, 253, 107);
+  margin-bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+}
+
+/* #play-menu h1 {
+  font-family:'Times New Roman', Times, serif;
+  font-variant: small-caps;
+  color: rgb(2, 253, 107);
+  margin-bottom: 0;
+} */
+
+#title {
+  color: rgb(2, 253, 107);
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+  text-transform: uppercase;
+  animation: blur 1s ease-out infinite;
+  text-shadow: 0px 0px 1px rgb(2, 253, 107), 0px 0px 3px rgb(2, 253, 107);
+}
+
+@keyframes blur {
+  from {
+    text-shadow: 0px 0px 10px rgb(65, 160, 105), 0px 0px 10px rgb(65, 160, 105),
+      0px 0px 25px rgb(65, 160, 105), 0px 0px 25px rgb(65, 160, 105),
+      0px 0px 25px rgb(65, 160, 105), 0px 0px 25px #fff, 0px 0px 25px #fff,
+      0px 0px 25px #fff, 0px 0px 50px #fff, 0px 0px 50px #fff,
+      0px 0px 50px #7b96b8, 0px 0px 150px #7b96b8, 0px 10px 100px #7b96b8,
+      0px 10px 100px #7b96b8, 0px 10px 100px #7b96b8, 0px 10px 100px #7b96b8,
+      0px -10px 100px #7b96b8, 0px -10px 100px #7b96b8;
+  }
+}
+
+#play-menu input {
+  font-size: 18px;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid black;
+  margin-bottom: 5px;
+  padding: 3px;
+  text-align: center;
+}
+
+#play-menu input:hover {
+  outline: 2px solid rgb(2, 253, 107);
+}
+
+#disconnect-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(0, 0, 0);
+}
+
+#disconnect-modal > div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 15px 20px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+ul {
+  list-style-type: none;
+  padding: 5px;
+}
+
+#infected-modal h2 {
+  color: rgb(2, 253, 107);
+  margin-bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+}
+
+#errorRoomCode-modal h2 {
+  color: rgb(2, 253, 107);
+  margin-bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+}
+
+#infected-modal > div {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 15px 20px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#errorRoomCode-modal > div {
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 15px 20px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#Game-over h2 {
+  color: rgb(2, 253, 107);
+  margin-bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+}
+
+#Game-over > div {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%) translateX(-50%);
+  padding: 15px 20px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  text-align: center;
+}
+
+#timer {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#timer p {
+  color: rgb(2, 253, 107);
+  margin-bottom: 0;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+}
+
+@media screen and (max-width: 640px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  #play-menu {
+    padding: 10px 15px;
+    min-width: 280px;
+  }
+
+  #lobby-screen {
+    padding: 10px 15px;
+    min-width: 280px;
+  }
+
+  #disconnect-modal > div {
+    padding: 10px;
+    min-width: 280px;
+  }
+
+  #infected-modal > div {
+    padding: 10px;
+    min-width: 280px;
+  }
+
+  #errorRoomCode-modal > div {
+    padding: 10px;
+    min-width: 280px;
+  }
+
+  #Game-over > div {
+    padding: 10px;
+    min-width: 280px;
+  }
+}
